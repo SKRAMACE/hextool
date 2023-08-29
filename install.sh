@@ -35,6 +35,7 @@ for f in ${files[@]}; do
     case $f in
         *.whl)
             install_wheel $f
+            ;;
         *)
             ;;
     esac
