@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Hextool"
+version = "1.0.0"
+description = "Converts between hex and binary"
+authors = [
+    { name = "Mark Santorello", email = "mark@bantam-tech.com" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+
+[project.scripts]
+hex2bin = "Hextool.run:hex2bin"
+bin2hex = "Hextool.run:bin2hex"
+bin2hexdump = "Hextool.run:bin2hexdump"
