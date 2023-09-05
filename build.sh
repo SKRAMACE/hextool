@@ -32,7 +32,7 @@ fi
 
 cp install.sh $TARDIR
 
-TARFILE=$DIST/$NAME-$VERSION.tar.gz
+TARFILE=$DIST/$TAR_FNAME.tar.gz
 tar -C $DIST -cf $TARFILE $TAR_FNAME
 
 EGG=$NAME.egg-info
