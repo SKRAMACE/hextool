@@ -9,13 +9,14 @@ fi
 # This creates DIST directory
 python3 -m build -w
 
-DIST=./dist
+DIST=$(pwd)/dist
 if [ ! -d $DIST ]; then
     echo "ERROR: python build failure"
     exit 1
 fi
 
-TARDIR=./dist/$NAME-$VERSION
+TAR_FNAME=$NAME-$VERSION
+TARDIR=$DIST/$TAR_FNAME
 mkdir -p $TARDIR
 
 cp $DIST/*.whl $TARDIR
@@ -32,7 +33,7 @@ fi
 cp install.sh $TARDIR
 
 TARFILE=$DIST/$NAME-$VERSION.tar.gz
-tar -cf $TARFILE $TARDIR 
+tar -C $DIST -cf $TARFILE $TAR_FNAME
 
 EGG=$NAME.egg-info
 if [ -d $EGG ]; then
