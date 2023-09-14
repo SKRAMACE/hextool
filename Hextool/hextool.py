@@ -1,6 +1,6 @@
 import os
 
-def hex2bin(s):
+def hex_cleanup(s):
     data = str(s)
 
     # Remove extra characters
@@ -9,6 +9,11 @@ def hex2bin(s):
     data = data.replace('0h','')
     data = data.replace('h','')
     data = data.replace(' ','')
+
+    return data
+
+def hex2bin(s):
+    data = hex_cleanup(s)
 
     aline = ''
     for h_ascii in data:
