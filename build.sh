@@ -35,6 +35,9 @@ cp install.sh $TARDIR
 TARFILE=$DIST/$TAR_FNAME.tar.gz
 tar -C $DIST -cf $TARFILE $TAR_FNAME
 
+TARFILE_NOVER=$DIST/$NAME.tar.gz
+cp $TARFILE $TARFILE_NOVER
+
 EGG=$NAME.egg-info
 if [ -d $EGG ]; then
     rm -r $EGG
