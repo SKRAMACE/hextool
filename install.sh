@@ -9,7 +9,7 @@ install_wheel(){
     local src=$1
 
     source $PYENV_MIROKI/bin/activate
-    pip3 install --upgrade $1
+    pip3 install $1
     deactivate
 }
 
